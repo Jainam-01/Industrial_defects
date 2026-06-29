@@ -17,10 +17,13 @@ venv/
 logs/
 *.log
 
-# Data
-data/raw/
-data/processed/
+# Raw dataset
+data/raw/*
+!data/raw/*.dvc
+
+# Other data
 data/interim/
+data/processed/
 artifacts/
 
 # Environment
