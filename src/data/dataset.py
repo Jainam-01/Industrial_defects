@@ -17,6 +17,7 @@ class MVTecDataset(Dataset):
         self,
         dataset_path: str,
         split: str = "train",
+        label: str | None = None,
     ):
         self.dataset_path = Path(dataset_path)
         self.split = split
@@ -29,6 +30,7 @@ class MVTecDataset(Dataset):
             sample
             for sample in self.ingestion.get_dataset_metadata()
             if sample["split"] == split
+            and (label is None or sample["label"] == label)
         ]
 
     def __len__(self):
