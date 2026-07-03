@@ -27,8 +27,6 @@ jobs:
           pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
           pip install numpy pillow scikit-learn pytest hydra-core mlflow sqlalchemy albumentations opencv-python-headless
 
-      - name: Run fast tests
+      - name: Run CI-safe unit tests
         run: |
-                - name: Run CI-safe unit tests
-        run: |
-              pytest tests/test_model_utils.py tests/test_evaluator.py tests/test_mlflow.py -v
+          pytest tests/test_model_utils.py tests/test_evaluator.py tests/test_mlflow.py -v
