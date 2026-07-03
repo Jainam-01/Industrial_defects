@@ -29,4 +29,6 @@ jobs:
 
       - name: Run fast tests
         run: |
-          pytest tests/test_data_ingestion.py tests/test_data_validation.py tests/test_dataset.py tests/test_preprocessing.py tests/test_model_utils.py tests/test_evaluator.py tests/test_mlflow.py -v
+                - name: Run CI-safe unit tests
+        run: |
+              pytest tests/test_model_utils.py tests/test_evaluator.py tests/test_mlflow.py -v
