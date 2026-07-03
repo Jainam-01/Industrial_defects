@@ -22,6 +22,10 @@ spec:
         - name: industrial-defect-api
           image: industrial-defect-api:latest
           imagePullPolicy: IfNotPresent
+          
+          envFrom:
+            - configMapRef:
+                name: industrial-defect-api-config
 
           ports:
             - containerPort: 8000

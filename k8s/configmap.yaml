@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: industrial-defect-api-config
+
+data:
+  ENVIRONMENT: "production"
+  ARTIFACTS_DIR: "/app/artifacts"
+  LOG_LEVEL: "INFO"
