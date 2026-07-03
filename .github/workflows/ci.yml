@@ -32,3 +32,21 @@ jobs:
       - name: Run CI-safe unit tests
         run: |
           pytest tests/test_model_utils.py tests/test_evaluator.py tests/test_mlflow.py -v
+
+  docker-build:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
+          tags: industrial-defect-api:ci
