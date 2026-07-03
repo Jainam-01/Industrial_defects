@@ -31,8 +31,7 @@ jobs:
 
       - name: Run CI-safe unit tests
         run: |
-          pytest tests/test_model_utils.py tests/test_evaluator.py tests/test_mlflow.py -v
-
+          pytest tests/test_model_utils.py tests/test_evaluator.py tests/test_mlflow.py tests/test_api_health.py -v
   docker-build:
     needs: test
     runs-on: ubuntu-latest
