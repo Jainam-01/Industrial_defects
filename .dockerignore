@@ -1,0 +1,13 @@
+venv/
+.venv/
+.git/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+data/
+mlruns/
+mlflow.db
+artifacts/
+*.pth
+*.pt
+.dvc/
