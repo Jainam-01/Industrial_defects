@@ -1,0 +1,11 @@
+seed: 42
+image_size: 256
+autoencoder_batch_size: 16
+vit_batch_size: 16
+epochs: 3
+learning_rate: 0.001
+validation_split_ratio: 0.1
+threshold_percentile: 95
+artifact_output_dir: artifacts/cloud_training
+dataset_path: data/raw/mvtec_ad
+device: auto
